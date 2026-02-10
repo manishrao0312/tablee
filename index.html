@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DSA Question → Pattern Cheat Sheet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #020617;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #1e293b;
+            position: sticky;
+            top: 0;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        th {
+            color: #7dd3fc;
+            font-size: 16px;
+        }
+
+        td {
+            font-size: 15px;
+            color: #e5e7eb;
+        }
+
+        tr:hover {
+            background: #020617;
+        }
+
+        .pattern {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .hint {
+            color: #cbd5f5;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #64748b;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DSA Question → Pattern Cheat Sheet</h1>
+<p>Read the question. Detect the pattern. Code like a machine.</p>
+
+<input type="text" id="search" placeholder="Search keywords like subarray, binary, tree...">
+
+<table id="dsaTable">
+    <thead>
+        <tr>
+            <th>If the question says / looks like</th>
+            <th>Use this pattern</th>
+            <th>Hint</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Subarray / substring / longest window</td>
+            <td class="pattern">Sliding Window</td>
+            <td class="hint">Contiguous elements</td>
+        </tr>
+        <tr>
+            <td>Find pair / triplet with sum X</td>
+            <td class="pattern">Two Pointers</td>
+            <td class="hint">Usually sorted array</td>
+        </tr>
+        <tr>
+            <td>Reverse array or string in-place</td>
+            <td class="pattern">Two Pointers</td>
+            <td class="hint">Start & end pointers</td>
+        </tr>
+        <tr>
+            <td>Cycle detection</td>
+            <td class="pattern">Fast & Slow Pointer</td>
+            <td class="hint">Linked list or numbers</td>
+        </tr>
+        <tr>
+            <td>Next greater element / stock span</td>
+            <td class="pattern">Monotonic Stack</td>
+            <td class="hint">One-pass stack</td>
+        </tr>
+        <tr>
+            <td>Max/min in sliding window</td>
+            <td class="pattern">Deque</td>
+            <td class="hint">O(n) window</td>
+        </tr>
+        <tr>
+            <td>Frequency / anagram / count</td>
+            <td class="pattern">Hash Map</td>
+            <td class="hint">Count occurrences</td>
+        </tr>
+        <tr>
+            <td>Sorted array search</td>
+            <td class="pattern">Binary Search</td>
+            <td class="hint">Divide & conquer</td>
+        </tr>
+        <tr>
+            <td>Minimum / maximum possible answer</td>
+            <td class="pattern">Binary Search on Answer</td>
+            <td class="hint">Optimization problems</td>
+        </tr>
+        <tr>
+            <td>Tree traversal</td>
+            <td class="pattern">DFS / BFS</td>
+            <td class="hint">Recursion or queue</td>
+        </tr>
+        <tr>
+            <td>Shortest path / minimum steps</td>
+            <td class="pattern">BFS</td>
+            <td class="hint">Unweighted graph</td>
+        </tr>
+        <tr>
+            <td>Permutations / subsets</td>
+            <td class="pattern">Backtracking</td>
+            <td class="hint">Try → undo → try</td>
+        </tr>
+        <tr>
+            <td>Optimal substructure</td>
+            <td class="pattern">Dynamic Programming</td>
+            <td class="hint">Memo or table</td>
+        </tr>
+        <tr>
+            <td>Top K elements</td>
+            <td class="pattern">Heap</td>
+            <td class="hint">Priority Queue</td>
+        </tr>
+        <tr>
+            <td>Merge intervals</td>
+            <td class="pattern">Sorting + Greedy</td>
+            <td class="hint">Sort by start</td>
+        </tr>
+        <tr>
+            <td>Connected components</td>
+            <td class="pattern">DFS / BFS / DSU</td>
+            <td class="hint">Graph grouping</td>
+        </tr>
+        <tr>
+            <td>Valid parentheses</td>
+            <td class="pattern">Stack</td>
+            <td class="hint">Push open, pop close</td>
+        </tr>
+    </tbody>
+</table>
+
+<footer>
+    Built for interviews, contests, and brute-force clarity.
+</footer>
+
+<script>
+    const searchInput = document.getElementById("search");
+    const tableRows = document.querySelectorAll("#dsaTable tbody tr");
+
+    searchInput.addEventListener("keyup", function () {
+        const value = this.value.toLowerCase();
+        tableRows.forEach(row => {
+            row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
+        });
+    });
+</script>
+
+</body>
+</html>
